@@ -10,12 +10,14 @@ public class UniformCostSearchTest {
 
         System.out.println("Calculating optimal solution...");
         ArrayList<Action> optimalPath = search.run();
-        for (Action a: optimalPath) {
-            for(ActionStatePair pair: stateSpace.succ(state)){
-                if(pair.action.equals(a)){
-                    state = pair.state;
-                    System.out.println("Dumping optimal successor...");
-                    dumpStateInfo(stateSpace, state);
+        if(!optimalPath.isEmpty()){
+            for (Action a: optimalPath) {
+                for (ActionStatePair pair : stateSpace.succ(state)) {
+                    if (pair.action.equals(a)) {
+                        state = pair.state;
+                        System.out.println("Dumping optimal successor...");
+                        dumpStateInfo(stateSpace, state);
+                    }
                 }
             }
         }
