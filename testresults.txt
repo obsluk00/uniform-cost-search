@@ -1,0 +1,161 @@
+instance 1:
+Instantiating problem instance with 6 passengers, 1 elevators and 5 floors...
+Starting search...
+1.140625 seconds search time
+number of expanded states: 187828
+Solution:
+move elevator 0 down from floor 4 to floor 3
+Passenger 1 enters elevator 0
+Passenger 0 enters elevator 0
+move elevator 0 down from floor 3 to floor 2
+Passenger 2 enters elevator 0
+Passenger 5 enters elevator 0
+move elevator 0 up from floor 2 to floor 3
+Passenger 3 enters elevator 0
+Passenger 2 leaves elevator 0
+Passenger 5 leaves elevator 0
+move elevator 0 up from floor 3 to floor 4
+Passenger 4 enters elevator 0
+Passenger 3 leaves elevator 0
+move elevator 0 down from floor 4 to floor 3
+move elevator 0 down from floor 3 to floor 2
+move elevator 0 down from floor 2 to floor 1
+Passenger 0 leaves elevator 0
+move elevator 0 down from floor 1 to floor 0
+Passenger 4 leaves elevator 0
+Passenger 1 leaves elevator 0
+Solution length: 20
+Solution cost: 92
+
+instance 2:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 5 passengers, 3 elevators and 8 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+instance 3:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 6 passengers, 5 elevators and 5 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+instance 4:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 4 passengers, 3 elevators and 9 floors...
+Starting search...
+16.203125 seconds search time
+number of expanded states: 1725605
+Solution:
+move elevator 1 up from floor 0 to floor 1
+move elevator 1 up from floor 1 to floor 2
+Passenger 0 enters elevator 1
+Passenger 2 enters elevator 1
+move elevator 1 down from floor 2 to floor 1
+move elevator 1 down from floor 1 to floor 0
+Passenger 2 leaves elevator 1
+move elevator 1 up from floor 0 to floor 1
+Passenger 0 leaves elevator 1
+move elevator 1 up from floor 1 to floor 2
+move elevator 1 up from floor 2 to floor 3
+Passenger 3 enters elevator 1
+move elevator 1 up from floor 3 to floor 4
+move elevator 1 up from floor 4 to floor 5
+move elevator 1 up from floor 5 to floor 6
+move elevator 1 up from floor 6 to floor 7
+Passenger 1 enters elevator 1
+move elevator 1 up from floor 7 to floor 8
+Passenger 1 leaves elevator 1
+Passenger 3 leaves elevator 1
+Solution length: 20
+Solution cost: 140
+
+instance 5:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 4 passengers, 3 elevators and 9 floors...
+Starting search...
+7.234375 seconds search time
+number of expanded states: 827253
+Solution:
+move elevator 1 up from floor 1 to floor 2
+Passenger 3 enters elevator 1
+move elevator 1 down from floor 2 to floor 1
+Passenger 3 leaves elevator 1
+move elevator 1 up from floor 1 to floor 2
+Passenger 0 enters elevator 1
+move elevator 1 up from floor 2 to floor 3
+move elevator 1 up from floor 3 to floor 4
+Passenger 2 enters elevator 1
+Passenger 1 enters elevator 1
+move elevator 1 up from floor 4 to floor 5
+move elevator 1 up from floor 5 to floor 6
+Passenger 0 leaves elevator 1
+Passenger 1 leaves elevator 1
+move elevator 1 up from floor 6 to floor 7
+move elevator 1 up from floor 7 to floor 8
+Passenger 2 leaves elevator 1
+Solution length: 17
+Solution cost: 107
+
+instance 6:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 7 passengers, 2 elevators and 4 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+was running for quite a while tho compared to the other outofmemoryerrors. mightve taken more than 10 mins
+
+instance 7:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 7 passengers, 3 elevators and 8 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+instance 8:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 3 passengers, 4 elevators and 5 floors...
+Starting search...
+0.015625 seconds search time
+number of expanded states: 346
+Solution:
+Passenger 2 enters elevator 2
+move elevator 2 down from floor 3 to floor 2
+Passenger 0 enters elevator 2
+Passenger 1 enters elevator 2
+Passenger 2 leaves elevator 2
+move elevator 2 down from floor 2 to floor 1
+Passenger 0 leaves elevator 2
+Passenger 1 leaves elevator 2
+Solution length: 8
+Solution cost: 30
+
+instance 9, run 1:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 5 passengers, 5 elevators and 9 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/jdk.internal.misc.Unsafe.allocateUninitializedArray(Unsafe.java:1269)
+	at java.base/java.lang.invoke.StringConcatFactory$MethodHandleInlineCopyStrategy.newArray(StringConcatFactory.java:1633)
+	at java.base/java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(DirectMethodHandle$Holder)
+	at java.base/java.lang.invoke.LambdaForm$MH/0x000000084007dc40.invoke(LambdaForm$MH)
+	at java.base/java.lang.invoke.Invokers$Holder.linkToTargetMethod(Invokers$Holder)
+	at ElevatorsStateSpace$ElevatorsState.toString(ElevatorsStateSpace.java:107)
+	at ElevatorsStateSpace$ElevatorsState.hashCode(ElevatorsStateSpace.java:76)
+	at java.base/java.util.HashMap.hash(HashMap.java:339)
+	at java.base/java.util.HashMap.put(HashMap.java:607)
+	at java.base/java.util.HashSet.add(HashSet.java:220)
+	at UniformCostSearch.run(UniformCostSearch.java:28)
+	at SearchAlgorithmBase.runSearchAlgorithm(SearchAlgorithmBase.java:21)
+	at UniformCostSearch.main(UniformCostSearch.java:74)
+
+Process finished with exit code 1
+
+instance 9, run 2:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 5 passengers, 5 elevators and 9 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+instance 10:
+Reading input from file elevators_inst_test...
+Instantiating problem instance with 8 passengers, 2 elevators and 4 floors...
+Starting search...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
