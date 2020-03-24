@@ -15,7 +15,7 @@ public class UniformCostSearch extends SearchAlgorithmBase {
 
     @Override
     protected ArrayList<Action> run() {
-        ArrayList<Action> optimalPath = new ArrayList<Action>();
+        expandedStates = 0;
         openList = new PriorityQueue<SearchNode>(1, (a, b) -> a.pathCost - b.pathCost);
         openList.add(new SearchNode(stateSpace.init()));
         closedList = new HashSet<State>();
@@ -29,6 +29,7 @@ public class UniformCostSearch extends SearchAlgorithmBase {
                 if (this.stateSpace.isGoal(n.state)) {
                     return n.extractPath(n);
                 }
+                expandedStates++;
                 for (ActionStatePair successor : this.stateSpace.succ(n.state)) {
                     openList.add(new SearchNode(n, successor, successor.action.cost()));
                 }
@@ -68,5 +69,8 @@ public class UniformCostSearch extends SearchAlgorithmBase {
             return path;
         }
     }
-
+    public static void main(String args[]){
+        UniformCostSearch search = new UniformCostSearch(args);
+        search.runSearchAlgorithm();
+    }
 }
