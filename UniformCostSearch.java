@@ -30,7 +30,7 @@ public class UniformCostSearch extends SearchAlgorithmBase {
                     return n.extractPath(n);
                 }
                 for (ActionStatePair successor : this.stateSpace.succ(n.state)) {
-                    openList.add(new ElevatorSearchNode(stateSpace, n, successor));
+                    openList.add(new ElevatorSearchNode(n, successor, successor.action.cost()));
                 }
             }
         }
@@ -39,7 +39,6 @@ public class UniformCostSearch extends SearchAlgorithmBase {
     }
 
 
-    //to make this pretty find a way to more conveniently access the statespaces cost() function
     public class ElevatorSearchNode {
         State state;
         ElevatorSearchNode parent;
@@ -53,11 +52,11 @@ public class UniformCostSearch extends SearchAlgorithmBase {
             this.pathCost = 0;
         }
 
-        public ElevatorSearchNode(StateSpace statespace, ElevatorSearchNode parent, ActionStatePair pair){
+        public ElevatorSearchNode(ElevatorSearchNode parent, ActionStatePair pair, int actioncost){
             this.state = pair.state;
             this.parent = parent;
             this.action = pair.action;
-            this.pathCost = parent.pathCost + statespace.cost(action);
+            this.pathCost = parent.pathCost + actioncost;
         }
 
         public ArrayList<Action> extractPath(ElevatorSearchNode n) {
